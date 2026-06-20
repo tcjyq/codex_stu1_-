@@ -14,87 +14,93 @@
 
 
 /* ======== MOBILE ONLY (max-width: 768px, does not affect desktop) ======== */
+
+/* ======== MOBILE: card layout fix (≤768px) ======== */
 @media (max-width: 768px) {
-  /* scroll */
-  html { scroll-snap-type: none; scroll-behavior: auto }
+
+  /* ─── root cause 1: remove forced 100svh per section ─── */
+  .page-section {
+    min-height: auto;
+    scroll-snap-align: none;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    justify-content: flex-start
+  }
+
+  /* ─── root cause 2: unhook align-items:stretch / center ─── */
+  .about-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start
+  }
+
+  /* ─── root cause 3: kill fixed min-heights ─── */
+  .feature-panel { min-height: auto; height: auto }
+  .statement-panel { min-height: auto }
+
+  /* ─── root cause 4: force about-grid to single column ─── */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px
+  }
+
+  /* ─── root cause 5: disable hover translate on touch ─── */
+  .glass:hover { transform: none }
+
+  /* ─── general mobile layout ─── */
+  html { scroll-snap-type: none }
   body { overflow-x: hidden }
 
-  /* tone down heavy effects */
-  .beam, .ribbon, .cursor-halo, .orbital-field, .glass:after, .grid { display: none !important }
-  .liquid-field span { filter: blur(18px); opacity: .12 }
-
-  /* sections */
-  .page-section { min-height: auto; scroll-snap-align: none; padding: 56px 0 }
   .section { width: calc(100% - 36px); padding: 0 }
 
-  /* top bar */
-  .topbar { top: 10px; width: calc(100% - 20px); max-width: 100vw; padding: 8px 10px; border-radius: 24px }
-  .topbar nav, .mail { display: none }
-  .menu-toggle { display: grid }
-  .brand { gap: 4px }
-  .brand-text { font-size: 14px; max-width: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
-
-  /* hero -> single column, avatar first */
-  .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 80px; padding-bottom: 40px }
-  .hero .portrait { max-width: 90vw; padding: 12px; margin: 0 auto }
+  .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 76px; padding-bottom: 40px }
+  .hero .portrait { max-width: 88vw; margin: 0 auto; padding: 12px }
   .hero h1 { font-size: clamp(1.85rem, 8vw, 3rem); margin: 12px 0 }
-  .lead { font-size: .95rem; line-height: 1.7 }
+  .lead, .section-head p { font-size: .95rem; line-height: 1.7 }
+
+  .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px }
+  .section-head.narrow { max-width: 100% }
+  .section-title { font-size: clamp(1.55rem, 7vw, 2.2rem) }
+
   .stats { grid-template-columns: repeat(3, 1fr); gap: 8px }
   .card { padding: 12px }
   .card strong { font-size: 1.15rem }
   .card span { font-size: .8rem }
-  .actions { flex-direction: column; gap: 8px }
-  .actions a { width: 100%; text-align: center }
-  .mini-grid { grid-template-columns: 1fr 1fr; gap: 8px }
 
-  /* section headings */
-  .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px }
-  .section-head.narrow { display: block; max-width: 100% }
-  .section-head p { font-size: .95rem; line-height: 1.7 }
-  .section-title { font-size: clamp(1.55rem, 7vw, 2.2rem) }
-
-  /* ── about-layout: CRITICAL FIX for card overlap ── */
-  .about-layout {
-    grid-template-columns: 1fr !important;
-    gap: 22px
-  }
-  .about-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px
-  }
-  .statement-panel { min-height: auto; padding: 20px }
-  .feature-panel { min-height: auto; padding: 18px; height: auto }
-  .panel h3 { font-size: 1.15rem }
-
-  /* skills */
   .skill-grid { grid-template-columns: 1fr 1fr; gap: 14px }
-
-  /* projects */
   .project-grid { grid-template-columns: 1fr; gap: 18px }
-  .project-card img { height: 170px }
+  .project-card img { height: 180px }
 
-  /* ── contact-layout: CRITICAL FIX for card overlap ── */
-  .contact-layout {
-    grid-template-columns: 1fr !important;
-    gap: 22px
-  }
-  .contact-main { padding: 22px 18px }
+  .contact-stack { gap: 18px }
+  .mini-panel { padding: 20px }
+  .contact-main { padding: 24px 20px }
   .contact h2 { font-size: clamp(1.45rem, 6.5vw, 2rem); line-height: 1.15 }
-  .contact-stack { gap: 16px }
-  .mini-panel { padding: 18px }
   .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; max-width: 100% }
   .contact-links .secondary { font-size: 12px; padding: 8px 6px; min-height: 38px }
 
-  /* mobile menu */
-  .mobile-menu { top: 58px; width: calc(100% - 20px) }
-  .mobile-menu a { min-height: 46px; font-size: 15px }
+  .topbar nav, .mail { display: none }
+  .menu-toggle { display: grid }
+  .brand { gap: 6px }
+  .brand-text { font-size: 14px; max-width: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+
+  .mobile-menu { top: 58px }
+  .mobile-menu a { min-height: 48px; font-size: 15px }
+
+  .mini-grid { grid-template-columns: 1fr 1fr; gap: 8px }
+  .actions { flex-direction: column; gap: 8px }
+  .actions a { width: 100%; text-align: center }
+
+  /* tone down effects for performance */
+  .beam, .ribbon, .cursor-halo, .glass:after, .grid { display: none }
+  .liquid-field span { filter: blur(18px); opacity: .12 }
 }
 
-/* extra small */
+/* very small phones */
 @media (max-width: 400px) {
-  .hero h1 { font-size: clamp(1.65rem, 7.5vw, 2.2rem) }
   .stats { grid-template-columns: 1fr 1fr }
   .skill-grid { grid-template-columns: 1fr; gap: 12px }
-  .project-card img { height: 140px }
   .contact-links { grid-template-columns: 1fr }
+  .project-card img { height: 150px }
+  .hero h1 { font-size: clamp(1.65rem, 7vw, 2.2rem) }
 }
