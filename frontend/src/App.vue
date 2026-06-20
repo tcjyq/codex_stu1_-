@@ -80,7 +80,7 @@
       <section id="contact" class="section page-section contact reveal-block">
         <div class="contact-layout card-group">
           <article class="glass contact-main"><h2 class="section-heading">如果您认为我可以胜任贵公司的某个岗位，请联系我。</h2><p>我正在为大学毕业后的求职做准备，期待在 AI 应用、数据整理、前端页面、Django 后台、业务资料整理等方向获得实习或正式岗位机会。</p><div class="actions contact-links"><a class="secondary" href="mailto:2496978741@qq.com">邮箱 2496978741@qq.com</a><span class="secondary contact-chip">微信 wx2496978741</span></div></article>
-          <aside class="contact-stack"><div class="glass mini-panel"><small>可以协助</small><b>网页作品 / 数据清洗 / 汇报材料</b></div><div class="glass mini-panel"><small>AI 工具</small><b>Codex / Claude Code / ChatGPT / DeepSeek</b></div><div class="glass mini-panel"><small>响应方式</small><b>先确认目标，再给出可验证版本</b></div></aside>
+          <aside class="contact-stack"><div class="glass mini-panel"><small>可以协助</small><b>网页作品 / 数据清洗 / 汇报材料</b></div><div class="glass mini-panel"><small>AI 工具</small><b>Codex / Claude Code / ChatGPT / DeepSeek</b></div><div class="glass mini-panel" style="text-align:center"><b>我口袋只剩玫瑰一片<br>此行又山高路远</b></div></aside>
         </div>
       </section>
     </main>
