@@ -38,70 +38,83 @@
 
 
 /* very small phones (375px iPhone SE baseline) */
+@media (max-width: 768px) {
 
-@media (max-width:768px){
-  .page-section{min-height:auto;scroll-snap-align:none;padding-top:140px;padding-bottom:140px;justify-content:flex-start}
-  .section{width:calc(100% - 32px);padding:0}
-  .contact-links{transform:none;margin-top:14px}
-  .topbar{top:10px;width:calc(100% - 20px);max-width:100vw;padding:8px 10px;border-radius:24px}
-  .topbar nav,.mail{display:none}
-  .menu-toggle{display:grid}
-  .brand{gap:5px}
-  .brand-text{font-size:13px;max-width:55px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .logo-mark{width:30px;height:30px}
-  .logo-mark svg{width:26px;height:26px}
-  .beam,.ribbon,.cursor-halo,.orbital-field,.glass:after,.grid{display:none}
-  .liquid-field span{filter:blur(20px);opacity:.08}
-  .hero h1{font-size:clamp(1.75rem,8.5vw,2.4rem);margin:10px 0}
-  .section-title{font-size:clamp(1.45rem,6.5vw,1.9rem)}
-  .contact h2{font-size:clamp(1.35rem,5.5vw,1.8rem);line-height:1.12;margin-top:18px}
-  .lead,.section-head p{font-size:.9rem;line-height:1.6}
-  .pill{font-size:11px;padding:5px 9px}
-  .card strong{font-size:1.05rem}
-  .card span,.panel p,.project-card p,.contact p{font-size:.83rem;line-height:1.55}
-  .panel h3,.project-card h3,.statement-panel h3{font-size:1.1rem}
-  .statement-panel p{font-size:.86rem;line-height:1.6}
-  .hero{grid-template-columns:1fr;gap:36px;padding-top:68px;padding-bottom:34px}
-  .hero .portrait{max-width:84vw;padding:10px;margin:0 auto}
-  .stats{grid-template-columns:repeat(3,1fr);gap:14px}
-  .card{padding:14px}
-  .actions{flex-direction:column;gap:16px}
-  .actions a{width:100%;text-align:center;justify-content:center}
-  .mini-grid{grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
-  .section-head{grid-template-columns:1fr;gap:16px;margin-bottom:40px}.section-title{margin-top:20px}
-  .section-head.narrow{margin-top:48px;max-width:100%}
-  .about-layout{grid-template-columns:1fr;gap:48px;align-items:start}
-  .about-grid{grid-template-columns:1fr;gap:32px}
-  .statement-panel{padding:32px;min-height:auto}
-  .feature-panel{min-height:auto;height:auto;padding:26px}
-  .skill-grid{grid-template-columns:1fr 1fr;gap:26px}
-  .project-grid{grid-template-columns:1fr;gap:32px}
-  .project-card img{height:160px}
-  .project-card div{padding:16px}
-  .contact-layout{grid-template-columns:1fr;gap:48px;align-items:start}
-  .contact-main{padding:34px 24px}
-  .contact-stack{gap:30px}
-  .mini-panel{padding:26px}
-  .contact-links{grid-template-columns:1fr 1fr;gap:12px;max-width:100%}
-  .contact-links .secondary{font-size:11px;padding:8px 6px;min-height:36px;white-space:normal;overflow-wrap:break-word}
-  .glass:hover{transform:none}
-  .mobile-menu{top:52px}
-  .mobile-menu a{min-height:44px;font-size:14px;padding:0 12px}
-  html{scroll-snap-type:none}
+  /* 1. Container: 100% width, 16px padding, no overflow */
+  .page-shell { overflow-x: hidden }
+  body { overflow-x: hidden }
+  .section { width: 100%; max-width: 100%; padding: 0 16px }
+  .page-section { min-height: auto; scroll-snap-align: none; padding: 80px 0 }
+  html { scroll-snap-type: none }
+
+  /* 2. Single-column card layouts */
+  .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 80px; padding-bottom: 48px }
+  .about-layout { grid-template-columns: 1fr; gap: 28px; align-items: start }
+  .about-grid { grid-template-columns: 1fr; gap: 16px }
+  .contact-layout { grid-template-columns: 1fr; gap: 28px; align-items: start }
+  .section-head { grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px }
+  .section-head.narrow { margin-top: 56px; max-width: 100% }
+  .project-grid { grid-template-columns: 1fr; gap: 16px }
+  .skill-grid { grid-template-columns: 1fr 1fr; gap: 16px }
+
+  /* 3. Card sizing: full width, 16px gap, auto height */
+  .glass:hover { transform: none }
+  .feature-panel { min-height: auto; height: auto; padding: 20px }
+  .statement-panel { min-height: auto; padding: 24px }
+  .card { padding: 12px }
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 10px }
+  .mini-panel { padding: 20px }
+  .contact-stack { gap: 16px }
+  .contact-main { padding: 24px 20px }
+  .project-card img { height: 170px }
+  .project-card div { padding: 16px }
+
+  /* 4. Typography: 75% titles, 14px+ body, 1.6 line-height */
+  .hero h1 { font-size: clamp(1.65rem, 8vw, 2.6rem); margin: 10px 0 }
+  .section-title { font-size: clamp(1.4rem, 6vw, 2rem); margin-top: 12px }
+  .contact h2 { font-size: clamp(1.3rem, 5.5vw, 1.8rem); line-height: 1.18; margin-top: 12px }
+  .lead, .section-head p { font-size: .88rem; line-height: 1.6 }
+  .pill { font-size: 11px; padding: 5px 9px }
+  .card strong { font-size: 1rem }
+  .card span, .panel p, .project-card p, .contact p { font-size: .82rem; line-height: 1.6 }
+  .panel h3, .project-card h3, .statement-panel h3 { font-size: 1.1rem }
+  .statement-panel p { font-size: .84rem; line-height: 1.6 }
+
+  /* 5. Alignment */
+  .actions { flex-direction: column; gap: 10px }
+  .actions a { width: 100%; text-align: center; justify-content: center }
+  .hero .portrait { max-width: 80vw; padding: 10px; margin: 0 auto }
+  .mini-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px }
+  .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; max-width: 100%; transform: none; margin-top: 12px }
+  .contact-links .secondary { font-size: 11px; padding: 8px 6px; min-height: 36px; white-space: normal; overflow-wrap: break-word }
+
+  /* 6. Remove heavy effects */
+  .beam, .ribbon, .cursor-halo, .orbital-field, .glass:after, .grid { display: none }
+  .liquid-field span { filter: blur(20px); opacity: .06 }
+
+  /* 7. Nav compact */
+  .topbar { top: 10px; width: calc(100% - 20px); max-width: 100vw; padding: 8px 10px; border-radius: 24px }
+  .topbar nav, .mail { display: none }
+  .menu-toggle { display: grid }
+  .brand { gap: 5px }
+  .brand-text { font-size: 13px; max-width: 55px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+  .logo-mark { width: 30px; height: 30px }
+  .logo-mark svg { width: 26px; height: 26px }
+
+  /* 8. Mobile menu */
+  .mobile-menu { top: 52px }
+  .mobile-menu a { min-height: 44px; font-size: 14px; padding: 0 12px }
 }
 
-@media (max-width:400px){
-  .hero h1{font-size:clamp(1.5rem,7.5vw,1.85rem)}
-  .section-title{font-size:clamp(1.28rem,5.5vw,1.6rem)}
-  .contact h2{font-size:clamp(1.18rem,5vw,1.5rem)}
-  .stats{gap:5px}
-  .card{padding:8px}
-  .card strong{font-size:.95rem}
-  .card span{font-size:.76rem}
-  .skill-grid{grid-template-columns:1fr;gap:22px}
-  .contact-links{grid-template-columns:1fr}
-  .project-card img{height:130px}
-  .section{width:calc(100% - 20px)}
-  .contact-main{padding:16px 12px}
-  .about-layout,.contact-layout{gap:40px}
+/* very small phones */
+@media (max-width: 400px) {
+  .hero h1 { font-size: clamp(1.4rem, 7vw, 1.8rem) }
+  .section-title { font-size: clamp(1.2rem, 5vw, 1.5rem) }
+  .contact h2 { font-size: clamp(1.1rem, 5vw, 1.4rem) }
+  .skill-grid { grid-template-columns: 1fr; gap: 14px }
+  .contact-links { grid-template-columns: 1fr }
+  .project-card img { height: 140px }
+  .section { padding: 0 12px }
+  .stats { gap: 6px }
+  .card { padding: 8px }
 }
