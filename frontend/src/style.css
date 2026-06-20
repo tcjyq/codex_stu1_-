@@ -104,6 +104,25 @@
   /* 8. Mobile menu */
   .mobile-menu { top: 52px }
   .mobile-menu a { min-height: 44px; font-size: 14px; padding: 0 12px }
+  /* 0. Nav fixed at highest z-index, main gets padding-top */
+  .topbar { z-index: 100 !important }
+  main { padding-top: 56px }
+
+  /* 1. mini-grid: keep in normal flow (remove any absolute) */
+  .mini-grid, .mini-grid div { position: static }
+
+  /* 2. section-title: ensure normal flow */
+  .section-title { position: static; margin-left: 0; margin-right: 0 }
+
+  /* 3. stats cards: equal padding, smaller subtitle */
+  .stats .card { padding-top: 14px; padding-bottom: 14px }
+  .stats .card span { font-size: .74rem; line-height: 1.35 }
+
+  /* 4. last section safe area */
+  .page-section:last-of-type,
+  #contact.page-section { padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)) }
+
+
 }
 
 /* very small phones */
