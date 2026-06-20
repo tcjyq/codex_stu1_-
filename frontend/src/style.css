@@ -40,7 +40,7 @@
 /* very small phones (375px iPhone SE baseline) */
 
 @media (max-width:768px){
-  .page-section{min-height:auto;scroll-snap-align:none;padding-top:52px;padding-bottom:52px;justify-content:flex-start}
+  .page-section{min-height:auto;scroll-snap-align:none;padding-top:68px;padding-bottom:68px;justify-content:flex-start}
   .section{width:calc(100% - 32px);padding:0}
   .contact-links{transform:none;margin-top:14px}
   .topbar{top:10px;width:calc(100% - 20px);max-width:100vw;padding:8px 10px;border-radius:24px}
@@ -61,27 +61,27 @@
   .card span,.panel p,.project-card p,.contact p{font-size:.83rem;line-height:1.55}
   .panel h3,.project-card h3,.statement-panel h3{font-size:1.1rem}
   .statement-panel p{font-size:.86rem;line-height:1.6}
-  .hero{grid-template-columns:1fr;gap:18px;padding-top:68px;padding-bottom:34px}
+  .hero{grid-template-columns:1fr;gap:28px;padding-top:68px;padding-bottom:34px}
   .hero .portrait{max-width:84vw;padding:10px;margin:0 auto}
-  .stats{grid-template-columns:repeat(3,1fr);gap:6px}
-  .card{padding:10px}
-  .actions{flex-direction:column;gap:7px}
+  .stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .card{padding:12px}
+  .actions{flex-direction:column;gap:12px}
   .actions a{width:100%;text-align:center;justify-content:center}
   .mini-grid{grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}
-  .section-head{grid-template-columns:1fr;gap:8px;margin-bottom:16px}
+  .section-head{grid-template-columns:1fr;gap:14px;margin-bottom:24px}
   .section-head.narrow{max-width:100%}
-  .about-layout{grid-template-columns:1fr;gap:20px;align-items:start}
-  .about-grid{grid-template-columns:1fr;gap:16px}
-  .statement-panel{padding:18px;min-height:auto}
-  .feature-panel{min-height:auto;height:auto;padding:16px}
-  .skill-grid{grid-template-columns:1fr 1fr;gap:12px}
-  .project-grid{grid-template-columns:1fr;gap:16px}
+  .about-layout{grid-template-columns:1fr;gap:34px;align-items:start}
+  .about-grid{grid-template-columns:1fr;gap:24px}
+  .statement-panel{padding:26px;min-height:auto}
+  .feature-panel{min-height:auto;height:auto;padding:22px}
+  .skill-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .project-grid{grid-template-columns:1fr;gap:24px}
   .project-card img{height:160px}
   .project-card div{padding:16px}
-  .contact-layout{grid-template-columns:1fr;gap:20px;align-items:start}
-  .contact-main{padding:20px 16px}
-  .contact-stack{gap:14px}
-  .mini-panel{padding:16px}
+  .contact-layout{grid-template-columns:1fr;gap:34px;align-items:start}
+  .contact-main{padding:26px 20px}
+  .contact-stack{gap:22px}
+  .mini-panel{padding:22px}
   .contact-links{grid-template-columns:1fr 1fr;gap:7px;max-width:100%}
   .contact-links .secondary{font-size:11px;padding:8px 6px;min-height:36px;white-space:normal;overflow-wrap:break-word}
   .glass:hover{transform:none}
@@ -98,10 +98,10 @@
   .card{padding:8px}
   .card strong{font-size:.95rem}
   .card span{font-size:.76rem}
-  .skill-grid{grid-template-columns:1fr;gap:10px}
+  .skill-grid{grid-template-columns:1fr;gap:16px}
   .contact-links{grid-template-columns:1fr}
   .project-card img{height:130px}
   .section{width:calc(100% - 20px)}
   .contact-main{padding:16px 12px}
-  .about-layout,.contact-layout{gap:16px}
+  .about-layout,.contact-layout{gap:28px}
 }
