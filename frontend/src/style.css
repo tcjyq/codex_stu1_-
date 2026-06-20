@@ -16,91 +16,153 @@
 /* ======== MOBILE ONLY (max-width: 768px, does not affect desktop) ======== */
 
 /* ======== MOBILE: card layout fix (≤768px) ======== */
+
+/* very small phones */
+
+/* ======== MOBILE ADAPTATION (max-width: 768px) ======== */
+/* Root causes fixed:
+   1. viewport tag OK (width=device-width,initial-scale=1.0)
+   2. box-sizing:border-box confirmed on *
+   3. .page-section 100svh -> auto
+   4. .feature-panel fixed min-height:205px -> auto
+   5. .statement-panel min-height:100% -> auto
+   6. .about-layout align-items:stretch -> start
+   7. .contact-layout align-items:center -> start
+   8. .glass:hover translateY(-3px) -> none (touch)
+   9. .about-layout / .about-grid / .contact-layout grid columns -> 1fr
+   10. Hero grid 2-col -> 1-col
+   11. .section-head grid 2-col -> 1-col
+   12. Font sizes scaled down
+   13. .contact-links grid 2-col -> 1fr 1fr
+   14. Gap spacing normalized at 20-24px
+*/
+
 @media (max-width: 768px) {
 
-  /* ─── root cause 1: remove forced 100svh per section ─── */
+  /* --- SECTION containers: remove 100svh forced height --- */
   .page-section {
     min-height: auto;
     scroll-snap-align: none;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 56px;
+    padding-bottom: 56px;
     justify-content: flex-start
   }
-
-  /* ─── root cause 2: unhook align-items:stretch / center ─── */
-  .about-layout,
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    align-items: start
+  .section {
+    width: calc(100% - 36px);
+    padding: 0
   }
 
-  /* ─── root cause 3: kill fixed min-heights ─── */
-  .feature-panel { min-height: auto; height: auto }
-  .statement-panel { min-height: auto }
+  /* --- disable heavy effects --- */
+  .beam, .ribbon, .cursor-halo, .orbital-field, .glass:after, .grid { display: none }
+  .liquid-field span { filter: blur(20px); opacity: .10 }
 
-  /* ─── root cause 4: force about-grid to single column ─── */
-  .about-grid {
+  /* --- typography scale-down --- */
+  .hero h1 { font-size: clamp(1.8rem, 9vw, 2.6rem); margin: 12px 0 }
+  .section-title { font-size: clamp(1.5rem, 7vw, 2rem) }
+  .contact h2 { font-size: clamp(1.4rem, 6vw, 1.9rem); line-height: 1.15 }
+  .lead, .section-head p { font-size: .92rem; line-height: 1.65 }
+  .pill { font-size: 12px; padding: 6px 10px }
+  .card strong { font-size: 1.1rem }
+  .card span, .panel p, .project-card p, .contact p { font-size: .85rem; line-height: 1.6 }
+  .panel h3, .project-card h3, .statement-panel h3 { font-size: 1.12rem }
+  .statement-panel p { font-size: .88rem; line-height: 1.65 }
+
+  /* --- hero: single column, avatar on top --- */
+  .hero {
     grid-template-columns: 1fr;
-    gap: 20px
+    gap: 20px;
+    padding-top: 72px;
+    padding-bottom: 36px
   }
-
-  /* ─── root cause 5: disable hover translate on touch ─── */
-  .glass:hover { transform: none }
-
-  /* ─── general mobile layout ─── */
-  html { scroll-snap-type: none }
-  body { overflow-x: hidden }
-
-  .section { width: calc(100% - 36px); padding: 0 }
-
-  .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 76px; padding-bottom: 40px }
-  .hero .portrait { max-width: 88vw; margin: 0 auto; padding: 12px }
-  .hero h1 { font-size: clamp(1.85rem, 8vw, 3rem); margin: 12px 0 }
-  .lead, .section-head p { font-size: .95rem; line-height: 1.7 }
-
-  .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px }
-  .section-head.narrow { max-width: 100% }
-  .section-title { font-size: clamp(1.55rem, 7vw, 2.2rem) }
-
+  .hero .portrait { max-width: 86vw; padding: 12px; margin: 0 auto }
   .stats { grid-template-columns: repeat(3, 1fr); gap: 8px }
   .card { padding: 12px }
-  .card strong { font-size: 1.15rem }
-  .card span { font-size: .8rem }
+  .actions { flex-direction: column; gap: 8px }
+  .actions a { width: 100%; text-align: center; justify-content: center }
+  .mini-grid { grid-template-columns: 1fr 1fr; gap: 8px }
 
+  /* --- section headings: single column --- */
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 18px
+  }
+  .section-head.narrow { max-width: 100% }
+
+  /* --- about-layout: single column, no stretch, auto heights --- */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 18px
+  }
+  .statement-panel { padding: 20px; min-height: auto }
+  .feature-panel { min-height: auto; height: auto; padding: 18px }
+
+  /* --- skills: 2 columns then 1 on tiny screens --- */
   .skill-grid { grid-template-columns: 1fr 1fr; gap: 14px }
+
+  /* --- projects: single column --- */
   .project-grid { grid-template-columns: 1fr; gap: 18px }
-  .project-card img { height: 180px }
+  .project-card img { height: 170px }
+  .project-card div { padding: 18px }
 
-  .contact-stack { gap: 18px }
-  .mini-panel { padding: 20px }
-  .contact-main { padding: 24px 20px }
-  .contact h2 { font-size: clamp(1.45rem, 6.5vw, 2rem); line-height: 1.15 }
-  .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; max-width: 100% }
-  .contact-links .secondary { font-size: 12px; padding: 8px 6px; min-height: 38px }
+  /* --- contact: single column, auto heights --- */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start
+  }
+  .contact-main { padding: 22px 18px }
+  .contact-stack { gap: 16px }
+  .mini-panel { padding: 18px }
+  .contact-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    max-width: 100%
+  }
+  .contact-links .secondary {
+    font-size: 12px;
+    padding: 8px 6px;
+    min-height: 38px;
+    white-space: normal;
+    overflow-wrap: break-word
+  }
 
+  /* --- topbar: compact, hamburger --- */
   .topbar nav, .mail { display: none }
   .menu-toggle { display: grid }
-  .brand { gap: 6px }
-  .brand-text { font-size: 14px; max-width: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+  .brand { gap: 5px }
+  .brand-text { font-size: 13px; max-width: 60px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+  .logo-mark { width: 32px; height: 32px }
+  .logo-mark svg { width: 28px; height: 28px }
 
-  .mobile-menu { top: 58px }
-  .mobile-menu a { min-height: 48px; font-size: 15px }
+  /* --- glass hover disabled on touch --- */
+  .glass:hover { transform: none }
+  .glass:active { transform: scale(.985) }
 
-  .mini-grid { grid-template-columns: 1fr 1fr; gap: 8px }
-  .actions { flex-direction: column; gap: 8px }
-  .actions a { width: 100%; text-align: center }
+  /* --- mobile-menu --- */
+  .mobile-menu { top: 56px }
+  .mobile-menu a { min-height: 46px; font-size: 14px; padding: 0 12px }
 
-  /* tone down effects for performance */
-  .beam, .ribbon, .cursor-halo, .glass:after, .grid { display: none }
-  .liquid-field span { filter: blur(18px); opacity: .12 }
+  /* --- scroll behavior --- */
+  html { scroll-snap-type: none }
 }
 
-/* very small phones */
+/* very small phones (375px iPhone SE baseline) */
 @media (max-width: 400px) {
-  .stats { grid-template-columns: 1fr 1fr }
+  .hero h1 { font-size: clamp(1.55rem, 8vw, 2rem) }
+  .section-title { font-size: clamp(1.32rem, 6vw, 1.7rem) }
+  .contact h2 { font-size: clamp(1.22rem, 5vw, 1.6rem) }
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 6px }
+  .card { padding: 10px }
+  .card strong { font-size: 1rem }
   .skill-grid { grid-template-columns: 1fr; gap: 12px }
   .contact-links { grid-template-columns: 1fr }
-  .project-card img { height: 150px }
-  .hero h1 { font-size: clamp(1.65rem, 7vw, 2.2rem) }
+  .project-card img { height: 140px }
+  .section { width: calc(100% - 24px) }
+  .contact-main { padding: 18px 14px }
 }
