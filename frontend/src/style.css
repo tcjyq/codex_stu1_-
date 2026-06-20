@@ -38,6 +38,7 @@
 
 
 /* very small phones (375px iPhone SE baseline) */
+.verse-overlay{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:32px 0}.verse-overlay span{font-family:"Ma Shan Zheng","ZCOOL KuaiLe","Liu Jian Mao Cao","Zhi Mang Xing","Long Cang",cursive,sans-serif;font-size:clamp(1.4rem,2.8vw,2rem);color:rgba(200,215,235,.22);letter-spacing:.06em;line-height:1.5;text-shadow:none;pointer-events:none;user-select:none}
 @media (max-width: 768px) {
 
   /* 1. Container: 100% width, 16px padding, no overflow */
@@ -83,7 +84,7 @@
   /* 5. Alignment */
   .actions { flex-direction: column; gap: 10px }
   .actions a { width: 100%; text-align: center; justify-content: center }
-  .hero .portrait { order: 999 !important; max-width: 80vw !important; padding: 12px !important; margin: 8px auto 0 !important; position: static !important; transform: none !important; top: auto !important; left: auto !important }
+  .hero .portrait { order: 999 !important; max-width: 80vw !important; padding: 12px !important; margin: 24px auto 0 !important; position: static !important; transform: translateY(0) !important; top: auto !important; left: auto !important }
   .mini-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; position: static }
   .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; max-width: 100%; transform: none; margin-top: 12px }
   .contact-links .secondary { font-size: 11px; padding: 8px 6px; min-height: 36px; white-space: normal; overflow-wrap: break-word }
