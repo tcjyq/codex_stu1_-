@@ -48,7 +48,7 @@
   html { scroll-snap-type: none }
 
   /* 2. Single-column card layouts */
-  .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 80px; padding-bottom: 48px }
+  .hero { grid-template-columns: 1fr; gap: 20px; padding-top: 78px; padding-bottom: 48px }
   .about-layout { grid-template-columns: 1fr; gap: 28px; align-items: start }
   .about-grid { grid-template-columns: 1fr; gap: 16px }
   .contact-layout { grid-template-columns: 1fr; gap: 28px; align-items: start }
@@ -83,7 +83,7 @@
   /* 5. Alignment */
   .actions { flex-direction: column; gap: 10px }
   .actions a { width: 100%; text-align: center; justify-content: center }
-  .hero .portrait { max-width: 80vw; padding: 10px; margin: 0 auto }
+  .hero .portrait { max-width: 80vw; padding: 10px; margin: 0 auto; position: static !important; transform: none !important }
   .mini-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px }
   .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; max-width: 100%; transform: none; margin-top: 12px }
   .contact-links .secondary { font-size: 11px; padding: 8px 6px; min-height: 36px; white-space: normal; overflow-wrap: break-word }
@@ -106,7 +106,7 @@
   .mobile-menu a { min-height: 44px; font-size: 14px; padding: 0 12px }
   /* 0. Nav fixed at highest z-index, main gets padding-top */
   .topbar { z-index: 100 !important }
-  main { padding-top: 56px }
+  main { padding-top: 0 }
 
   /* 1. mini-grid: keep in normal flow (remove any absolute) */
   .mini-grid, .mini-grid div { position: static }
