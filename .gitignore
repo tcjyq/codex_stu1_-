@@ -1,0 +1,41 @@
+# Python virtual environment
+.venv/
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Django
+db.sqlite3
+staticfiles/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temp
+tmp/
+*.tmp
+
+# Build output (keep source, ignore builds)
+static/vue/
+
+# Memory / agents
+.agents/
+extensions/
+notes/
+
+# Skills lock
+skills-lock.json
