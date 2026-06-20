@@ -142,7 +142,7 @@ function setupGsapMotion() {
     gsap.set('.reveal-block,.section-heading,.card-group > *', { opacity: 1 })
     if (!reduceMotion) {
       const opening = gsap.timeline({ defaults: { ease: 'expo.out' } })
-      opening.set('.hero-title span', { display: 'block', clipPath: 'inset(0 0 100% 0)', y: 86, scaleY: 0.72, transformOrigin: '50% 100%' })
+      opening.set('.hero-title span', { display: 'block', clipPath: 'inset(0 0 100% 0)', y: window.innerWidth < 768 ? 42 : 86, scaleY: 0.72, transformOrigin: '50% 100%' })
         .from('.curtain-letter b', { opacity: 0, duration: 0.62, ease: 'expo.out' })
         .to('.panel-left', { xPercent: -100, duration: 1.18, ease: 'expo.inOut' }, 0.28)
         .to('.panel-right', { xPercent: 100, duration: 1.18, ease: 'expo.inOut' }, 0.28)
@@ -162,9 +162,10 @@ function setupGsapMotion() {
 
       document.querySelectorAll('.page-section:not(#top)').forEach((section) => {
         const tl = gsap.timeline({ scrollTrigger: { trigger: section, start: 'top 58%', once: false, toggleActions: 'play none none reverse' } })
-        tl.from(section.querySelectorAll('.section-heading'), { y: 82, scaleY: 0.82, opacity: 0, filter: 'blur(10px)', transformOrigin: '50% 100%', duration: 1.0, ease: 'expo.out', clearProps: 'filter' })
-          .from(section.querySelectorAll('.section-head p,.contact-main p'), { y: 26, opacity: 0, filter: 'blur(8px)', duration: 0.82, ease: 'expo.out' }, '-=0.58')
-          .from(section.querySelectorAll('.card-group > *,.contact-links > *'), { y: 46, opacity: 0, filter: 'blur(10px)', duration: 0.95, stagger: 0.09, ease: 'expo.out' }, '-=0.42')
+        const isMobile = window.innerWidth < 768;
+        tl.from(section.querySelectorAll('.section-heading'), { y: window.innerWidth < 768 ? 28 : 82, scaleY: 0.82, opacity: 0, filter: 'blur(10px)', transformOrigin: '50% 100%', duration: 1.0, ease: 'expo.out', clearProps: isMobile ? 'all' : 'filter' })
+          .from(section.querySelectorAll('.section-head p,.contact-main p'), { y: window.innerWidth < 768 ? 12 : 26, opacity: 0, filter: 'blur(8px)', duration: 0.82, ease: 'expo.out' }, '-=0.58')
+          .from(section.querySelectorAll('.card-group > *,.contact-links > *'), { y: window.innerWidth < 768 ? 20 : 46, opacity: 0, filter: 'blur(10px)', duration: 0.95, stagger: 0.09, ease: 'expo.out' }, '-=0.42')
       })
     }
   })
