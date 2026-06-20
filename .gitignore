@@ -27,9 +27,12 @@ Thumbs.db
 
 # Temp
 tmp/
+
+# Cloudflare Pages needs dist/
+!dist/
 *.tmp
 
-# Build output (keep source, ignore builds)
+# Old Django static build output (not used by Cloudflare Pages)
 static/vue/
 
 # Memory / agents

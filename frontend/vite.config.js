@@ -2,10 +2,10 @@
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: '/static/vue/',
+  base: './',
   plugins: [vue()],
   build: {
-    outDir: '../static/vue',
+    outDir: '../dist',
     emptyOutDir: true,
   },
 })
