@@ -47,26 +47,58 @@
 /* very small phones */
 
 
-
-
-
-
-@media (max-width: 1279px) {
-  html { overflow-x: hidden }
+@media (max-width: 768px) {
+  html { scroll-snap-type: none; overflow-x: hidden; -webkit-text-size-adjust: 100% }
   body { overflow-x: hidden; min-width: 0 }
-  .page-shell {
-    width: 1280px;
-    min-width: 1280px;
-    transform-origin: top left;
-    transform: scale(var(--page-scale));
-  }
-  .opening-curtain {
-    width: 1280px;
-    transform-origin: top left;
-    transform: scale(var(--page-scale));
-  }
-}
-
-@media (min-width: 1280px) {
-  .page-shell { --page-scale: 1 }
+  .section { width: calc(100% - 32px) !important; padding: 48px 0 !important }
+  .page-section { min-height: auto !important; scroll-snap-align: none; padding: 56px 0 !important; justify-content: flex-start !important }
+  .topbar { top: 8px; width: calc(100% - 16px) !important; max-width: 100% !important; padding: 6px 10px; border-radius: 22px; z-index: 100 !important }
+  .topbar nav, .mail { display: none }
+  .menu-toggle { display: grid !important; width: 34px; height: 34px }
+  .brand { gap: 4px }
+  .brand-text { font-size: 13px; max-width: 50px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+  .logo-mark { width: 28px; height: 28px }
+  .logo-mark svg { width: 24px; height: 24px }
+  .hero { grid-template-columns: 1fr !important; gap: 14px; padding-top: 70px; padding-bottom: 36px }
+  .hero .portrait { order: 999 !important; max-width: 75vw !important; margin: 16px auto 0 !important; padding: 8px !important; position: static !important; transform: none !important }
+  .hero h1 { font-size: clamp(1.5rem,7vw,2.4rem) !important; margin: 6px 0 }
+  .hero .pill { font-size: 11px; padding: 5px 9px }
+  .lead { font-size: .85rem; line-height: 1.55 }
+  .stats { grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 4px }
+  .card { padding: 10px }
+  .card strong { font-size: 1rem }
+  .card span { font-size: .75rem; line-height: 1.3 }
+  .actions { flex-direction: column; gap: 8px }
+  .actions a { width: 100%; text-align: center; justify-content: center }
+  .mini-grid { grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px }
+  .section-head { grid-template-columns: 1fr !important; gap: 8px; margin-bottom: 18px }
+  .section-head.narrow { max-width: 100% }
+  .section-title { font-size: clamp(1.3rem,5.5vw,1.8rem) !important }
+  .contact h2 { font-size: clamp(1.2rem,5vw,1.6rem) !important; line-height: 1.15 }
+  .section-head p { font-size: .82rem; line-height: 1.5 }
+  .about-layout { grid-template-columns: 1fr !important; gap: 16px; align-items: start }
+  .about-grid { grid-template-columns: 1fr !important; gap: 14px }
+  .statement-panel { min-height: auto; padding: 18px }
+  .feature-panel { min-height: auto !important; height: auto !important; padding: 16px }
+  .panel h3, .project-card h3 { font-size: 1.05rem }
+  .panel p { font-size: .8rem; line-height: 1.5 }
+  .skill-grid { grid-template-columns: 1fr 1fr; gap: 12px }
+  .project-grid { grid-template-columns: 1fr; gap: 16px }
+  .project-card img { height: 150px }
+  .project-card div { padding: 14px }
+  .contact-layout { grid-template-columns: 1fr !important; gap: 16px; align-items: start }
+  .contact-bare { padding: 0 }
+  .contact-stack { gap: 14px }
+  .contact-links { grid-template-columns: 1fr 1fr; gap: 8px; max-width: 100% }
+  .contact-links .secondary { font-size: 11px; padding: 7px 5px; min-height: 34px }
+  .contact-bare-links { flex-wrap: wrap; gap: 10px }
+  .bare-link { font-size: .85rem }
+  .beam, .ribbon, .cursor-halo, .orbital-field, .glass:after, .grid { display: none }
+  .liquid-field span { filter: blur(20px); opacity: .05 }
+  .glass:hover { transform: none }
+  .mobile-menu { top: 48px; width: calc(100% - 16px) }
+  .mobile-menu a { min-height: 42px; font-size: 14px }
+  .verse-overlay span { font-size: clamp(1.1rem,4vw,1.6rem) }
+  .learning-bare h3 { font-size: 1.2rem }
+  .hero-title span { font-size: inherit !important }
 }
