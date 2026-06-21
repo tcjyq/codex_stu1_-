@@ -160,7 +160,7 @@ function setupGsapMotion() {
       gsap.to('.ribbon', { x: 'random(-36, 40)', y: 'random(-14, 16)', skewX: 'random(-4, 4)', duration: 13, repeat: -1, yoyo: true, ease: 'sine.inOut', stagger: 1.1 })
       gsap.to('.orbit', { rotation: 360, duration: 34, repeat: -1, ease: 'none', stagger: 6 })
 
-      if (window.innerWidth >= 768) document.querySelectorAll('.page-section:not(#top)').forEach((section) => {
+      document.querySelectorAll('.page-section:not(#top)').forEach((section) => {
         const tl = gsap.timeline({ scrollTrigger: { trigger: section, start: 'top 58%', once: false, toggleActions: 'play none none reverse' } })
         const isMobile = window.innerWidth < 768;
         tl.from(section.querySelectorAll('.section-heading'), { y: window.innerWidth < 768 ? 28 : 82, scaleY: 0.82, opacity: 0, filter: 'blur(10px)', transformOrigin: '50% 100%', duration: 1.0, ease: 'expo.out', clearProps: isMobile ? 'all' : 'filter' })
