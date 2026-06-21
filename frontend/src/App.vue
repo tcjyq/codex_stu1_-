@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="page-shell">
     <div class="opening-curtain" aria-hidden="true"><span class="panel-left"></span><span class="panel-right"></span><i class="curtain-letter"><b class="letter-left">M</b><b class="letter-right">M</b></i></div>
     <canvas ref="sky" class="gravity-sky" aria-hidden="true"></canvas>
@@ -73,7 +73,7 @@
       </section>
 
       <section id="projects" class="section page-section reveal-block">
-        <div class="section-head"><h2 class="section-title section-heading">项目与练习</h2><p>项目不追求堆满概念，而是把问题、过程和结果讲清楚。</p></div>
+        <div class="section-head"><h2 class="section-title section-heading">项目与练习</h2><p>项目不是追求堆满概念，而是把问题、过程和结果讲清楚。</p></div>
         <div class="project-grid card-group"><article v-for="project in projects" :key="project.title" class="glass project-card"><img :src="project.image" :alt="project.alt" loading="lazy" decoding="async" /><div><small>{{ project.time }}</small><h3>{{ project.title }}</h3><p>{{ project.text }}</p></div></article></div>
       </section>
 
