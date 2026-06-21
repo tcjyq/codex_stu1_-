@@ -79,7 +79,10 @@
 
       <section id="contact" class="section page-section contact reveal-block">
         <div class="contact-layout card-group">
-          <div class="contact-bare"><h2 class="section-heading">如果您认为我可以胜任贵公司的某个岗位，请联系我。</h2><p>我正在为大学毕业后的求职做准备，期待在 AI 应用、数据整理、前端页面、Django 后台、业务资料整理等方向获得实习或正式岗位机会。</p><div class="actions contact-links"><a class="secondary" href="mailto:2496978741@qq.com">邮箱 2496978741@qq.com</a><span class="secondary contact-chip">微信 wx2496978741</span></div></div>
+          <div class="contact-bare"><h2 class="section-heading">如果您认为我可以胜任贵公司的某个岗位，请联系我。</h2><p>我正在为大学毕业后的求职做准备，期待在 AI 应用、数据整理、前端页面、Django 后台、业务资料整理等方向获得实习或正式岗位机会。</p><div class="contact-bare-links">
+  <a class="bare-link" href="mailto:2496978741@qq.com"><svg class="bare-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg><span>2496978741@qq.com</span></a>
+  <span class="bare-link" @click="copyWechat"><svg class="bare-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 10.5h8M8 14h5"/><path d="M3 8.5a5.5 5.5 0 016.5-3.5M17 7a4 4 0 00-8 0"/><circle cx="12" cy="14" r="8"/><path d="M12 2v2M12 22v-2"/></svg><span>wx2496978741</span></span>
+</div></div>
           <aside class="contact-stack"><div class="glass mini-panel"><small>可以协助</small><b>网页作品 / 数据清洗 / 汇报材料</b></div><div class="glass mini-panel"><small>AI 工具</small><b>Codex / Claude Code / ChatGPT / DeepSeek</b></div><div class="verse-overlay" aria-hidden="true"><span>我口袋只剩玫瑰一片</span><span>此行又山高路远</span></div></aside>
         </div>
       </section>
