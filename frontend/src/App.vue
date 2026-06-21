@@ -43,7 +43,7 @@
           <div class="actions opening-item"><a href="#projects" class="primary">查看项目</a><a href="#contact" class="secondary">联系我</a></div>
           <div class="stats card-group">
             <article class="glass card"><strong>2027</strong><span>本科预计毕业</span></article>
-            <article class="glass card"><strong>GPA 3.12</strong><span>连续 2 学年获校级三等奖学金</span></article>
+            <article class="glass card"><strong>GPA 3.12/4</strong><span>连续 2 学年获校级三等奖学金</span></article>
             <article class="glass card"><strong>CET-4</strong><span>英语基础能力</span></article>
           </div>
         </div>
