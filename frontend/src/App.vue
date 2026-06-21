@@ -58,7 +58,7 @@
       <section id="about" class="section page-section about-section reveal-block">
         <div class="section-head"><h2 class="section-title section-heading">从信息系统出发，做能被看懂的 AI 作品。</h2><p>我更喜欢把混乱的信息拆成结构，再用代码和设计把结果讲清楚。页面、报告、后台和数据表都应该服务于真实问题。</p></div>
         <div class="about-layout card-group">
-          <article class="glass statement-panel"><h3>我的学习路径</h3><p>江苏科技大学苏州理工学院，信息管理与信息系统专业。课程训练覆盖数据库、管理信息系统、数据分析、业务流程和文档表达。</p><div class="statement-row"><span>2023.09 - 2027.06</span><span>本科在读</span></div></article>
+          <div class="learning-bare"><h3>我的学习路径</h3><p>江苏科技大学苏州理工学院，信息管理与信息系统专业。课程训练覆盖数据库、管理信息系统、数据分析、业务流程和文档表达。</p><div class="statement-row"><span>2023.09 - 2027.06</span><span>本科在读</span></div></div>
           <div class="about-grid">
             <article class="glass panel feature-panel"><h3>VibeCoding 工作流</h3><p>熟悉使用 Codex、Claude Code 等工具，把需求拆解成任务，快速完成页面、脚本、文档和调试闭环。</p></article>
             <article class="glass panel feature-panel"><h3>数据到表达</h3><p>能用 Excel/WPS、Python 和可视化思路处理数据，重视字段核对、报表规范和分析结论的可解释性。</p></article>
