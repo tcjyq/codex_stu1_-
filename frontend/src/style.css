@@ -59,15 +59,15 @@
   .brand-text { font-size: 13px; max-width: 50px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
   .logo-mark { width: 28px; height: 28px }
   .logo-mark svg { width: 24px; height: 24px }
-  .hero { grid-template-columns: 1fr !important; gap: 14px; padding-top: 70px; padding-bottom: 36px }
-  .hero .portrait { order: 999 !important; max-width: 75vw !important; margin: 16px auto 0 !important; padding: 8px !important; position: static !important; transform: none !important }
+  .hero { grid-template-columns: 1fr !important; gap: 10px; padding-top: 70px; padding-bottom: 44px }
+  .hero .portrait { order: 999 !important; max-width: 70vw !important; margin: 24px auto 0 !important; padding: 6px !important; position: static !important; transform: none !important }
   .hero h1 { font-size: clamp(1.5rem,7vw,2.4rem) !important; margin: 6px 0 }
   .hero .pill { font-size: 11px; padding: 5px 9px }
   .lead { font-size: .85rem; line-height: 1.55 }
-  .stats { grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 4px }
-  .card { padding: 10px }
-  .card strong { font-size: 1rem }
-  .card span { font-size: .75rem; line-height: 1.3 }
+  .stats { grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 12px; margin-bottom: 4px }
+  .card { padding: 8px }
+  .card strong { font-size: .95rem }
+  .card span { font-size: .7rem; line-height: 1.25 }
   .actions { flex-direction: column; gap: 8px }
   .actions a { width: 100%; text-align: center; justify-content: center }
   .mini-grid { grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px }
