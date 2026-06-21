@@ -140,8 +140,8 @@
 }
 
 @media (min-width: 769px) {
-  .contact-main { padding-top: 20px; padding-bottom: 18px }
-  .contact-main h2 { margin-bottom: 4px }
-  .contact-main p { margin-bottom: 4px; margin-top: 0 }
-  .contact-links { margin-top: 2px }
+  .contact-main { justify-content: flex-start; padding-top: 24px; padding-bottom: 24px }
+  .contact-main h2 { margin-bottom: 8px }
+  .contact-main p { margin-bottom: 4px }
+  .contact-links { margin-top: 8px }
 }
