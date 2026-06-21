@@ -39,6 +39,7 @@
 
 /* very small phones (375px iPhone SE baseline) */
 .verse-overlay{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:36px 0}.verse-overlay span{font-family:"Ma Shan Zheng","ZCOOL KuaiLe","Liu Jian Mao Cao","Zhi Mang Xing","Long Cang",cursive,sans-serif;font-size:clamp(1.6rem,3.2vw,2.6rem);color:rgba(200,215,235,.18);letter-spacing:.08em;line-height:1.6;text-shadow:none;pointer-events:none;user-select:none}
+.contact-bare{display:flex;flex-direction:column;padding:0}.contact-bare h2{color:#f8fbff;text-shadow:0 1px 0 #bfeaff,0 2px 0 rgba(69,120,165,.78),0 4px 0 rgba(18,42,74,.66),0 16px 36px rgba(56,189,248,.22),0 32px 68px rgba(0,0,0,.42)}.contact-bare p{color:#d8e4f3;max-width:62ch}.contact-bare .contact-links{margin-top:12px}
 @media (max-width: 768px) {
 
   /* 1. Container: 100% width, 16px padding, no overflow */
